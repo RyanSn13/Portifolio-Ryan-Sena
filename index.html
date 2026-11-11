@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Ryan Samuel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="cabecalho-enem">
+    <div class="cabecalho-logo">
+        <a href="#sobre" class="brand-link">
+            <span class="brand-title">Ryan Samuel</span>
+            <span class="brand-subtitle">Engenharia de Software | UCSAL</span>
+        </a>
+    </div>
+
+    <div class="cabecalho-pilula">
+        <button id="btn-tema" type="button" class="btn-icone"
+            aria-pressed="false" aria-label="Alternar Tema" title="Alternar Tema">
+            <span id="icone-tema">☀️</span>
+        </button>
+
+        <a href="#contato" class="btn-icone"
+            aria-label="Ir para Contato" title="Contato">👤</a>
+
+        <div class="menu-dropdown-container">
+            <button id="btn-menu-hamb" type="button" class="btn-icone"
+                aria-expanded="false" aria-label="Abrir Menu">☰</button>
+
+            <nav id="menu-navegacao" class="menu-dropdown oculto"
+                aria-label="Navegação Principal">
+                <a href="#sobre">Sobre mim</a>
+                <a href="#conhecimentos">Conhecimentos</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+                <button type="button" id="btn-toggle-adm">
+                    🔒 Modo Administrador
+                </button>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div id="status" role="status" aria-live="polite"></div>
+
+    <!-- Sobre mim -->
+    <section id="sobre" class="secao secao-sobre">
+        <div class="sobre-texto">
+            <h2>Sobre mim</h2>
+
+            <p>
+                Olá! Meu nome é Ryan Samuel e sou estudante de Engenharia
+                de Software na UCSAL. Tenho foco em desenvolvimento web
+                Front-End e na criação de sistemas acessíveis e performáticos.
+            </p>
+
+            <p>
+                Minha trajetória combina o aprendizado de arquitetura
+                de software com a prática diária de JavaScript moderno,
+                HTML semântico e estilização responsiva.
+            </p>
+
+            <div id="texto-extra-sobre" class="oculto" hidden>
+                <p>
+                    Atualmente estou aprofundando meus conhecimentos na
+                    construção de interfaces com acesso total por teclado,
+                    padrões WCAG e boas práticas de manipulação segura do DOM.
+                </p>
+            </div>
+
+            <p>
+                <strong>Objetivo Profissional:</strong>
+                Atuar como desenvolvedor web Front-End / Full-Stack,
+                integrando equipes que valorizem qualidade de código
+                e acessibilidade.
+            </p>
+
+            <button id="btn-mostrar-mais" type="button"
+                class="botao" aria-expanded="false"
+                aria-controls="texto-extra-sobre">
+                Mostrar mais
+            </button>
+
+            <span class="destaque">Portfólio em construção</span>
+        </div>
+
+        <img src="imagens/RYAN FOTO.jpeg"
+            alt="Foto de perfil de Ryan Samuel" class="foto">
+    </section>
+
+    <!-- Conhecimentos -->
+    <section id="conhecimentos" class="secao">
+        <h2>Conhecimentos</h2>
+
+        <ul>
+            <li>HTML5 Semântico & Acessibilidade (WAI-ARIA)</li>
+            <li>CSS3 (Flexbox, Grid & Media Queries)</li>
+            <li>JavaScript Puro (Manipulação de DOM & Assincronismo)</li>
+            <li>Java & C# (Programação Orientada a Objetos)</li>
+            <li>Git & GitHub (Controle de Versão)</li>
+        </ul>
+
+        <div class="tabela-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tecnologia</th>
+                        <th>Nível</th>
+                        <th>Onde aplico</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>HTML5 / ARIA</td>
+                        <td>Intermediário</td>
+                        <td>Estruturação semântica e acessível</td>
+                    </tr>
+                    <tr>
+                        <td>CSS3 / Flexbox</td>
+                        <td>Intermediário</td>
+                        <td>Estilização visual e responsividade</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript (ES6+)</td>
+                        <td>Intermediário</td>
+                        <td>Interatividade, validação e manipulação do DOM</td>
+                    </tr>
+                    <tr>
+                        <td>Java / C#</td>
+                        <td>Iniciante</td>
+                        <td>Lógica de programação e backend acadêmico</td>
+                    </tr>
+                    <tr>
+                        <td>Git / GitHub</td>
+                        <td>Intermediário</td>
+                        <td>Versionamento e colaboração de projetos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Painel administrativo -->
+    <section id="cadastro-projeto" class="secao secao-adm oculto" hidden>
+        <div class="cabecalho-adm-painel">
+            <h2>Painel de Gestão: Cadastrar Novo Projeto</h2>
+            <span class="badge-adm">Exclusivo ADM (Ryan)</span>
+        </div>
+
+        <form id="form-cadastro" novalidate>
+            <label for="nome-projeto">
+                Nome do projeto (mínimo 3 caracteres):
+            </label>
+            <input type="text" id="nome-projeto" name="nome"
+                required minlength="3" placeholder="Ex: App de Tarefas">
+
+            <label for="categoria-projeto">Categoria:</label>
+            <select id="categoria-projeto" name="categoria">
+                <option value="web">Web</option>
+                <option value="mobile">Mobile</option>
+            </select>
+
+            <button type="submit" class="botao">
+                Adicionar projeto ao Portfólio
+            </button>
+        </form>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="secao">
+        <h2>Projetos</h2>
+
+        <div class="painel-filtro">
+            <span>Filtrar projetos por categoria:</span>
+
+            <div class="botoes-filtro" role="group"
+                aria-label="Filtro de projetos">
+                <button type="button" class="btn-filtro ativo"
+                    data-categoria="todos" aria-pressed="true">Todos</button>
+
+                <button type="button" class="btn-filtro"
+                    data-categoria="web" aria-pressed="false">Web</button>
+
+                <button type="button" class="btn-filtro"
+                    data-categoria="mobile" aria-pressed="false">Mobile</button>
+            </div>
+
+            <p id="contador-projetos" aria-live="polite">
+                Projetos visíveis: 3
+            </p>
+        </div>
+
+        <p id="sem-resultados" class="oculto alerta-vazio" hidden>
+            Nenhum projeto encontrado para a categoria selecionada.
+        </p>
+
+        <div id="projetos-container" class="cards">
+
+            <article class="card projeto" data-categoria="web">
+                <h3>Portfólio Pessoal</h3>
+                <p><strong>Problema:</strong> Apresentar a trajetória acadêmica e projetos de forma acessível.</p>
+                <p><strong>Público:</strong> Recrutadores e comunidade acadêmica.</p>
+                <p><strong>Contribuição:</strong> Desenvolvimento completo da estrutura HTML, CSS responsivo e scripts JS.</p>
+                <p class="tecnologias">Tecnologias: HTML5, CSS3, JavaScript</p>
+
+                <div class="card-acoes">
+                    <a href="https://github.com/RyanSn13"
+                        target="_blank" rel="noopener noreferrer"
+                        class="botao">Ver Repositório</a>
+
+                    <button type="button"
+                        class="botao remover btn-adm-only oculto" hidden>
+                        Remover
+                    </button>
+                </div>
+            </article>
+
+            <article class="card projeto" data-categoria="web">
+                <h3>Gerenciador de Tarefas</h3>
+                <p><strong>Problema:</strong> Organização da rotina de estudos dos estudantes acadêmicos.</p>
+                <p><strong>Público:</strong> Estudantes universitários.</p>
+                <p><strong>Contribuição:</strong> Criação das regras de manipulação das tarefas via JS puro.</p>
+                <p class="tecnologias">Tecnologias: HTML, CSS, JavaScript</p>
+
+                <div class="card-acoes">
+                    <a href="https://github.com/RyanSn13"
+                        target="_blank" rel="noopener noreferrer"
+                        class="botao">Ver Repositório</a>
+
+                    <button type="button"
+                        class="botao remover btn-adm-only oculto" hidden>
+                        Remover
+                    </button>
+                </div>
+            </article>
+
+            <article class="card projeto" data-categoria="web">
+                <h3>Landing Page Institucional</h3>
+                <p><strong>Problema:</strong> Divulgação de um evento acadêmico com formulário de inscrição.</p>
+                <p><strong>Público:</strong> Participantes do evento.</p>
+                <p><strong>Contribuição:</strong> Estilização responsiva com Flexbox e validação do formulário.</p>
+                <p class="tecnologias">Tecnologias: HTML, CSS Flexbox</p>
+
+                <div class="card-acoes">
+                    <a href="https://github.com/RyanSn13"
+                        target="_blank" rel="noopener noreferrer"
+                        class="botao">Ver Layout</a>
+
+                    <button type="button"
+                        class="botao remover btn-adm-only oculto" hidden>
+                        Remover
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="secao">
+        <h2>Contato Direto</h2>
+
+        <p>
+            Envie uma mensagem diretamente para meu e-mail principal
+            (<strong>ryansenasamuel@gmail.com</strong>) através do formulário abaixo.
+        </p>
+
+        <!-- Substitua pelo endpoint real gerado no Formspree -->
+        <form id="form-contato"
+            action="https://formspree.io/f/SEU_ID"
+            method="POST" novalidate>
+
+            <input type="hidden" name="_subject"
+                value="Nova mensagem enviada pelo seu Portfólio Web!">
+
+            <div class="grupo-campo">
+                <label for="contato-nome">
+                    Nome completo (3 a 80 caracteres):
+                </label>
+                <input type="text" id="contato-nome" name="nome"
+                    required minlength="3" maxlength="80"
+                    aria-describedby="erro-nome instrucao-nome">
+
+                <small id="instrucao-nome" class="instrucao">
+                    Aceita letras, acentos, espaços, hífens e apóstrofos.
+                </small>
+                <span id="erro-nome" class="mensagem-erro"
+                    aria-live="polite"></span>
+            </div>
+
+            <div class="grupo-campo">
+                <label for="contato-email">E-mail de contato:</label>
+                <input type="email" id="contato-email" name="email"
+                    required aria-describedby="erro-email">
+                <span id="erro-email" class="mensagem-erro"
+                    aria-live="polite"></span>
+            </div>
+
+            <div class="grupo-campo">
+                <label for="contato-motivo">Motivo do contato:</label>
+                <select id="contato-motivo" name="motivo"
+                    required aria-describedby="erro-motivo">
+                    <option value="">-- Selecione uma opção --</option>
+                    <option value="Oportunidade profissional">Oportunidade profissional</option>
+                    <option value="Projeto freelance">Projeto freelance</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <span id="erro-motivo" class="mensagem-erro"
+                    aria-live="polite"></span>
+            </div>
+
+            <div id="container-assunto-extra"
+                class="grupo-campo oculto" hidden>
+                <label for="contato-assunto-extra">
+                    Assunto adicional (5 a 100 caracteres):
+                </label>
+                <input type="text" id="contato-assunto-extra"
+                    name="assuntoExtra" minlength="5" maxlength="100"
+                    aria-describedby="erro-assunto-extra">
+                <span id="erro-assunto-extra" class="mensagem-erro"
+                    aria-live="polite"></span>
+            </div>
+
+            <div class="grupo-campo">
+                <label for="contato-mensagem">
+                    Mensagem (30 a 1000 caracteres):
+                </label>
+                <textarea id="contato-mensagem" name="mensagem"
+                    rows="5" required minlength="30" maxlength="1000"
+                    aria-describedby="erro-mensagem contador-caracteres"></textarea>
+
+                <div class="linha-info-mensagem">
+                    <small id="contador-caracteres" class="contador">
+                        0 / 1000 caracteres (mínimo 30)
+                    </small>
+                    <span id="erro-mensagem" class="mensagem-erro"
+                        aria-live="polite"></span>
+                </div>
+            </div>
+
+            <div id="resumo-erros" class="resumo-erros oculto"
+                role="alert" tabindex="-1" hidden></div>
+
+            <button type="submit" id="btn-submeter-contato" class="botao">
+                Enviar mensagem para Ryan
+            </button>
+        </form>
+    </section>
+</main>
+
+<aside class="extra">
+    <h2>Informações e Contato Real</h2>
+
+    <p><strong>Objetivo Atual:</strong> Estágio ou oportunidade Júnior em Desenvolvimento Web Front-End.</p>
+
+    <p><strong>Canais de Contato Direto:</strong></p>
+
+    <ul>
+        <li>E-mail Pessoal: ryansenasamuel@gmail.com</li>
+        <li>E-mail Acadêmico: ryan.samuel@ucsal.edu.br</li>
+        <li>
+            GitHub:
+            <a href="https://github.com/RyanSn13"
+                target="_blank" rel="noopener noreferrer">
+                github.com/RyanSn13
+            </a>
+        </li>
+        <li>
+            LinkedIn:
+            <a href="https://linkedin.com/in/ryan-samuel-a17144394"
+                target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/ryansamuel
+            </a>
+        </li>
+    </ul>
+</aside>
+
+<footer class="rodape">
+    <p>© Portfólio de Ryan Samuel - Programação Front-End - UCSAL 2026</p>
+</footer>
+
+</body>
+</html>
